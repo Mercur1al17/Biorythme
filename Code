@@ -1,0 +1,38 @@
+Листинг 1 – Код главного меню
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MenuControls : MonoBehaviour
+{
+    public void ExitPressed()
+    {
+        Application.Quit();
+        Debug.Log("Exit pressed!");
+    }
+    public void PlayPressed()
+    {
+        SceneManager.LoadScene("Game");
+    }
+}
+
+Листинг 2 – Код меню настроек
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Settings : MonoBehaviour
+{
+    public bool isFullScreen = true;
+    public void FullScreenToggle()
+    {
+        
+        isFullScreen = !isFullScreen;
+        Screen.fullScreen = isFullScreen;
+    }
+    public void Quality(int q)
+    {
+        QualitySettings.SetQualityLevel(q);
+    }
+}
